@@ -1,0 +1,244 @@
+{
+  "name": "devcalc",
+	"displayName": "DevCalc",
+	"description": "%description%",
+    "author": "Shen Zhilong <shenzhilong0921@foxmail.com>",
+	"version": "1.2.0",
+    "publisher": "fellasleep",
+    "icon": "icon.png",
+	"license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fellasleep/vscode-devcalc"
+    },
+	"engines": {
+		"vscode": "^1.78.0"
+	},
+    "categories": [
+        "Formatters",
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "dev",
+        "calc",
+        "devcalc",
+        "px",
+        "vw",
+        "rem",
+        "rpx",
+        "percentage",
+        "px vw",
+        "px rem",
+        "px rpx",
+        "px %",
+        "px percentage",
+        "px to vw",
+        "px to rem",
+        "px to rpx",
+        "px to %",
+        "px to percentage",
+        "px2vw",
+        "px2rem",
+        "px2rpx",
+        "px2%",
+        "px2percentage",
+        "wxss"
+    ],
+    "activationEvents": [
+        "onLanguage:css",
+        "onLanguage:scss",
+        "onLanguage:sass",
+        "onLanguage:less",
+        "onLanguage:postcss",
+        "onLanguage:stylus",
+        "onLanguage:html",
+        "onLanguage:tpl",
+        "onLanguage:wxss",
+        "onLanguage:vue",
+        "onLanguage:vue-html",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescriptreact"
+    ],
+	"main": "./out/extension.js",
+	"l10n": "./l10n",
+    "contributes": {
+        "configuration": {
+            "title": "DevCalc",
+            "properties": {
+                "devcalc.conversionType": {
+                    "type": "string",
+                    "default": "vw",
+                    "enum": ["vw", "rem", "rpx", "%"],
+                    "enumDescriptions": [
+                        "px <=> vw",
+                        "px <=> rem",
+                        "px <=> rpx",
+                        "px <=> %"
+                    ],
+                    "description": "%devcalc.conversionType.description%",
+                    "order": 1
+                },
+                "devcalc.conversionRange": {
+                    "type": "string",
+                    "default": "word",
+                    "enum": ["word", "line"],
+                    "enumDescriptions": [
+						"%devcalc.conversionRange.word.description%",
+						"%devcalc.conversionRange.line.description%"
+                    ],
+                    "description": "%devcalc.conversionRange.description%",
+                    "order": 2
+                },
+                "devcalc.screenWidth": {
+                    "type": "integer",
+                    "default": 1920,
+                    "description": "%devcalc.screenWidth.description%",
+                    "order": 3
+                },
+                "devcalc.enableCommonScreenWidths": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%devcalc.enableCommonScreenWidths.description%",
+                    "order": 4
+                },
+                "devcalc.commonScreenWidths": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [1920, 720],
+                    "description": "%devcalc.commonScreenWidths.description%",
+                    "order": 5
+                },
+                "devcalc.rootElementFontSize": {
+                    "type": "number",
+                    "default": 16,
+                    "description": "%devcalc.rootElementFontSize.description%",
+                    "order": 6
+                },
+                "devcalc.keepDecimalPlaces": {
+                    "type": "integer",
+                    "default": 6,
+                    "description": "%devcalc.keepDecimalPlaces.description%",
+                    "order": 7
+                },
+                "devcalc.ignoreSmallerValues": {
+                    "type": "number",
+                    "default": 1,
+                    "description": "%devcalc.ignoreSmallerValues.description%",
+                    "order": 8
+                },
+                "devcalc.enableAutocompleteConversion": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%devcalc.enableAutocompleteConversion.description%",
+                    "order": 9
+                },
+                "devcalc.enableLineAnnotations": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%devcalc.enableLineAnnotations.description%",
+                    "order": 10
+                },
+                "devcalc.enableLineAnnotationsAlwaysOnDisplay": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%devcalc.enableLineAnnotationsAlwaysOnDisplay.description%",
+                    "order": 11
+                },
+                "devcalc.lineAnnotationsColor": {
+                    "type": "string",
+                    "default": "#6272a4",
+                    "description": "%devcalc.lineAnnotationsColor.description%",
+                    "order": 12
+                },
+                "devcalc.removeLeadingZero": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%devcalc.removeLeadingZero.description%",
+                    "order": 13
+                },
+                "devcalc.statusBarItemAppearance": {
+                    "type": "string",
+                    "default": "text",
+                    "enum": ["text", "rocket", "zap", "ruby", "heart", "star", "star-full", "desktop", "mobile", "layers", "settings", "settings-gear"],
+                    "description": "%devcalc.statusBarItemAppearance.description%",
+                    "order": 14
+                },
+                "devcalc.statusBarItemAlignment": {
+                    "type": "string",
+                    "default": "right",
+                    "enum": ["left", "right"],
+                    "enumDescriptions": [
+                        "%devcalc.statusBarItemAlignment.primary.description%",
+                        "%devcalc.statusBarItemAlignment.secondary.description%"
+                    ],
+                    "description": "%devcalc.statusBarItemAlignment.description%",
+                    "order": 15
+                },
+                "devcalc.statusBarItemPriority": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "%devcalc.statusBarItemPriority.description%",
+                    "order": 16
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "devcalc.px2dev",
+				"title": "%devcalc.px2dev.title%"
+            },
+            {
+                "command": "devcalc.dev2px",
+				"title": "%devcalc.dev2px.title%"
+            },
+            {
+                "command": "devcalc.px2dev2px",
+				"title": "%devcalc.px2dev2px.title%"
+            },
+            {
+                "command": "devcalc.updateConversionData",
+				"title": "%devcalc.updateConversionData.title%"
+            }
+        ],
+        "keybindings": [{
+            "command": "devcalc.px2dev2px",
+            "key": "alt+z",
+            "mac": "alt+z"
+        }, {
+            "command": "devcalc.updateConversionData",
+            "key": "alt+q",
+            "mac": "alt+q"
+        }],
+        "menus": {
+            "editor/context": [{
+                "when": "editorFocus",
+                "command": "devcalc.px2dev2px",
+                "group": "artist"
+            }]
+        }
+    },
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.78.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"eslint": "^8.18.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.4",
+		"@vscode/test-electron": "^2.1.5"
+	}
+}

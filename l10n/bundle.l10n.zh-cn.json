@@ -1,0 +1,15 @@
+{
+  "default 16": "默认值 16",
+  "DevCalc: Update root element font size": "DevCalc：更新根元素字号",
+  "DevCalc: Root element font size must be greater than zero, {0}px cannot be used": "DevCalc：根元素字号要大于零，不可以使用 {0}px",
+  "default 1920": "默认值 1920",
+  "DevCalc: Update screen width": "DevCalc：更新屏幕宽度",
+  "DevCalc: Screen width must be greater than zero, {0}px cannot be used": "DevCalc：屏幕宽度要大于零，不可以使用 {0}px",
+  "DevCalc: {0} → {1} (Current root element font size {2}px)": "DevCalc:：{0} → {1}（当前根元素字号 {2}px）",
+  "DevCalc: {0} = {1} / {2}px": "DevCalc：{0} = {1} / {2}px",
+  "DevCalc: {0} → {1} (Current screen width {2}px)": "DevCalc：{0} → {1}（当前屏幕宽度 {2}px）",
+  "DevCalc: Reserved decimal places must be greater than or equal to zero, {0} cannot be used": "DevCalc：保留小数最大位数要大于等于零，不可以使用 {0}",
+  "DevCalc: Ignored value must be greater than or equal to zero, {0} cannot be used": "DevCalc：被忽略的值要大于等于零，不可以使用 {0}",
+  "DevCalc: Click to update root element font size": "DevCalc：点击以更新根元素字号",
+  "DevCalc: Click to update screen width": "DevCalc：点击以更新屏幕宽度"
+}
