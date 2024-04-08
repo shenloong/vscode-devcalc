@@ -1,3 +1,16 @@
+## [1.3.1] - 2024-04-07
+
+### Enhancement
+
+- Optimized code structure.
+
+## [1.3.0] - 2024-04-01
+
+### Changed
+
+- Changed conversion logic to convert only the selected conversion type.
+- Changed code style.
+
 ## [1.2.0] - 2023-06-02
 
 ### Added
