@@ -3,7 +3,7 @@
 	"displayName": "DevCalc",
 	"description": "%description%",
     "author": "Shen Zhilong <shenzhilong0921@foxmail.com>",
-	"version": "1.2.0",
+	"version": "1.3.1",
     "publisher": "fellasleep",
     "icon": "icon.png",
 	"license": "MIT",
@@ -162,7 +162,7 @@
                 "devcalc.statusBarItemAppearance": {
                     "type": "string",
                     "default": "text",
-                    "enum": ["text", "rocket", "zap", "ruby", "heart", "star", "star-full", "desktop", "mobile", "layers", "settings", "settings-gear"],
+                    "enum": ["text", "rocket", "zap", "ruby", "heart", "star", "star-full", "desktop", "mobile", "settings", "settings-gear"],
                     "description": "%devcalc.statusBarItemAppearance.description%",
                     "order": 14
                 },
