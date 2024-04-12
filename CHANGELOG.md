@@ -1,3 +1,10 @@
+## [1.3.2] - 2024-04-12
+
+### Enhancement
+
+- Optimized the decimal of the converted value
+- Updated `commonScreenWidths` to make the last value as `screenWidth`
+
 ## [1.3.1] - 2024-04-07
 
 ### Enhancement
