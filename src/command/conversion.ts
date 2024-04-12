@@ -37,7 +37,7 @@ export function dev2px(text: string) {
     const devText = leadingZeroHandler(devValue + devUnit)
     const calcValue = devUnit === 'rem' ? devValue * config.rootElementFontSize : devUnit === 'rpx' ? devValue / (750 / config.screenWidth) : devValue * config.screenWidth / 100
     const labelHead = devUnit === 'rem' ? config.rootElementFontSize : config.screenWidth
-    const pxValue = roundedNumber(parseFloat(calcValue.toFixed(config.keepDecimalPlaces)), config.keepDecimalPlaces - 1)
+    const pxValue = roundedNumber(parseFloat(calcValue.toFixed(config.keepDecimalPlaces)), config.keepDecimalPlaces)
     const pxText = leadingZeroHandler(`${pxValue}px`)
     const label: string | CompletionItemLabel = `${labelHead}: ${devText} → ${pxText}`
     return {
@@ -57,6 +57,7 @@ function leadingZeroHandler(result: string) {
 }
 
 function roundedNumber(num: number, decimalPlaces: number) {
+    decimalPlaces = decimalPlaces <= 2 ? 1 : decimalPlaces - 2
     let multiplier = Math.pow(10, decimalPlaces)
     return Math.round(num * multiplier) / multiplier
 }
