@@ -37,13 +37,11 @@ export function dev2px(text: string) {
     const devText = leadingZeroHandler(devValue + devUnit)
     const calcValue = devUnit === 'rem' ? devValue * config.rootElementFontSize : devUnit === 'rpx' ? devValue / (750 / config.screenWidth) : devValue * config.screenWidth / 100
     const labelHead = devUnit === 'rem' ? config.rootElementFontSize : config.screenWidth
-    const pxValue = parseFloat(calcValue.toFixed(config.keepDecimalPlaces))
-    const pxValueInt = Math.round(pxValue)
-    const pxValueFix = Math.abs(pxValueInt - pxValue) > Math.pow(10, -(config.keepDecimalPlaces - 1)) ? pxValue : pxValueInt
-    const pxText = leadingZeroHandler(`${pxValueFix}px`)
+    const pxValue = roundedNumber(parseFloat(calcValue.toFixed(config.keepDecimalPlaces)), config.keepDecimalPlaces - 1)
+    const pxText = leadingZeroHandler(`${pxValue}px`)
     const label: string | CompletionItemLabel = `${labelHead}: ${devText} → ${pxText}`
     return {
-        pxValue: pxValueFix,
+        pxValue,
         pxText,
         devValue,
         devText,
@@ -56,6 +54,11 @@ function leadingZeroHandler(result: string) {
         return result.startsWith('0.') ? result.substring(1) : result.startsWith('-0.') ? '-' + result.substring(2) : result
     }
     return result
+}
+
+function roundedNumber(num: number, decimalPlaces: number) {
+    let multiplier = Math.pow(10, decimalPlaces)
+    return Math.round(num * multiplier) / multiplier
 }
 
 // convert matched values by selected lines
