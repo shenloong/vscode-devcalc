@@ -1,4 +1,4 @@
-import { window, workspace, ConfigurationTarget, StatusBarAlignment, StatusBarItem, l10n } from 'vscode'
+import { window, workspace, ConfigurationChangeEvent, ConfigurationTarget, StatusBarAlignment, StatusBarItem, l10n } from 'vscode'
 import { updateDecorations } from './decoration'
 
 // supported languages
@@ -40,7 +40,7 @@ let myStatusBarItemStyle: string
 export let myStatusBarItem: StatusBarItem = window.createStatusBarItem(myStatusBarItemAlignment, myStatusBarItemPriority)
 
 // update configurations
-export function updateConfig() {
+export function updateConfig(event: ConfigurationChangeEvent) {
     const suggest = workspace.getConfiguration('editor.suggest')
     config = getConfig()
     suggest.update('showUnits', config.enableAutocompleteConversion ? false : true, ConfigurationTarget.Global)
@@ -50,6 +50,13 @@ export function updateConfig() {
         devcalcPattern.dev = `${numericPattern}(${myConversionType})`
         devcalcPattern.all = `${numericPattern}(px|${myConversionType})`
         devcalcPattern.decoration = `(:0| +0|0 *;|auto|(${numericPattern}(px|${myConversionType})))`
+    }
+
+    if (event.affectsConfiguration('devcalc.commonScreenWidths')) {
+        const commonScreenWidths: any = workspace.getConfiguration('devcalc').get('commonScreenWidths')
+        const lastValue = commonScreenWidths[commonScreenWidths.length - 1]
+        configs.update('screenWidth', lastValue, ConfigurationTarget.Global)
+        config.screenWidth = lastValue
     }
 
     if (config.screenWidth <= 0) {
