@@ -1,49 +1,38 @@
 # DevCalc
 
-在 VS Code 中实现 `px` 与 `vw/rem/rpx/%` 之间的相互转换。
-
-## 特性
-
-- 支持智能感知并自动完成转换。
-- 支持转换选中或聚焦的值或所在行中的所有值。
-- 支持忽略较小的值。
-- 支持 `vw/rem/rpx/%` 到 `px` 的行注释和悬停信息提示。
-- 支持快速更新屏幕宽度或根元素字号。
-- 支持设置常用屏幕宽度并可在其中快速切换。
-- 支持修改状态栏外观。
-
-## 用法
-
-- 按下 `Alt` + `Z` 进行转换。
-- 按下 `Alt` + `Q` 或点击状态栏图标以更新屏幕宽度或根元素字号。
-- 键入 `px` 会自动完成 `vw/rem/rpx/%` 的转换结果。
-- 悬停 `vw/rem/rpx/%` 显示转换信息。
-- 选中或聚焦带有 `vw/rem/rpx/%` 的行显示 `px` 注释。
-
----
-
-# DevCalc
+[English](https://github.com/shenloong/vscode-devcalc/blob/main/README.md) | [中文](https://github.com/shenloong/vscode-devcalc/blob/main/README.zh.md)
 
 Convert between `px` and `vw/rem/rpx/%` in VS Code.
 
 ## Features
 
-- Supports intelliSense and autocomplete conversion.
-- Supports converting selected or focused value(s) or all values in the line(s).
-- Supports ignoring smaller values.
-- Supports `vw/rem/rpx/%` to `px` line annotations and hover message prompt.
-- Supports quick update of screen width or root font size.
-- Supports setting general screen widths.
-- Supports modifying status bar appearance.
+- **Smart Conversion**: IntelliSense and real-time conversion of `px` values in the input.
+- **Unit Calculation**: Freely convert between `px` and `vw/rem/rpx/%`.
+- **Conversion Range**: Supports the option to convert only the selected values or all values ​​in the line.
+- **Decimal Retention**: Customize the maximum number of decimal places to retain.
+- **Precision Control**: Set a small value range `n`, automatically ignoring values where `-n ≤ px ≤ n`.
+- **Annotations Assist**: Displays the original `px` value as a line annotation during conversion.
+- **Hover Tip**: Shows the conversion formula when the mouse hovers over.
+- **Quick Adjustment**: Easily adjust the screen width and root element font size.
+- **Preset Management**: Save common screen widths for rapid switch.
+- **Column Customization**: Customize the icon and position of the status bar item.
 
 ## Usage
 
-- Press `Alt` + `Z` to convert.
-- Press `Alt` + `Q` or click status bar icon to update screen width or root font size.
 - Type `px` to autocomplete the `vw/rem/rpx/%` conversion.
-- Hover `vw/rem/rpx/%` to display the conversion message.
-- Select or focus the line(s) with `vw/rem/rpx/%` to display `px` annotations.
+- Press `Alt` + `Z` to convert.
+- Press `Alt` + `Q` or click status bar item to update screen width or root element font size.
 
----
+## Language Modes
 
-**Enjoy!**
+The default configuration covers the following language modes. You can add or delete corresponding language identifiers as needed.
+
+| Language       | Identifier        |
+| :------------- | :---------------- |
+| HTML           | `html`            |
+| CSS            | `css`             |
+| SCSS           | `scss`            |
+| Less           | `less`            |
+| Vue            | `vue`             |
+| JavaScript JSX | `javascriptreact` |
+| TypeScript JSX | `typescriptreact` |
