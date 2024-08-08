@@ -4,6 +4,8 @@
 
 Convert between `px` and `vw/rem/rpx/%` in VS Code.
 
+![](demo.gif)
+
 ## Features
 
 - **Smart Conversion**: IntelliSense and real-time conversion of `px` values in the input.
